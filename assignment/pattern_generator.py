@@ -5,7 +5,7 @@ cmds.file(new=True,force=True)
 
 def generate_pattern():
    
-#The informations on the 5 by 5 grid that is trying to be made with in the scene so I can use the .
+#The informations on the 5 by 5 grid that is trying to be made with in the scene so I can use them in later things like range statments.
     num_rows = 5
     num_cols = 5
     spacing = 3.0
@@ -25,6 +25,7 @@ def generate_pattern():
 #These lines of code tell what shape should go where in the 5 by 5 grid.            
             if (row + col) % 2 == 0:
                 name = cmds.polyCylinder (name=box,radius=radius, height=height)[0]
+#This line puts cubes down on mutiples of 3. This only happens once in the scene since the second mutilple of three is 6 which the original if statement covers.
             elif (row + col) % 3 == 0:
                 name = cmds.polyCube (name=box,width=width,height=height,depth=depth)[0]
 #This changes the shape to a sphere if nither of the other statements happen. this allows for all shapes that should be made will be made.
